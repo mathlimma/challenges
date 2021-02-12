@@ -3,6 +3,7 @@ package com.mefius.interBootcamp;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
+// not accepted - case teste 4, 5 and 6 with error
 
 public class EntrevistaEmbaraçosa {
 

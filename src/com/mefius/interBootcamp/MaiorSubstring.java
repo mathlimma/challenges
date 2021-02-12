@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
+// accepted
 public class MaiorSubstring {
 
     static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
