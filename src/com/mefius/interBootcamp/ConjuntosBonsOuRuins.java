@@ -5,8 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ConjuntosBonsOuRuins {
 
@@ -22,15 +21,16 @@ public class ConjuntosBonsOuRuins {
                     String currentToken = sc.nextLine().trim();
                     set.add(currentToken);
                 }
-                boolean isBad = false;
-                for (String word : set) {
-                    Stream<String> stringStream = set.stream().filter((el) -> el.contains(word));
-                    List<String> stList = stringStream.collect(Collectors.toList());
+                AtomicBoolean isBad = new AtomicBoolean(false);
 
-                    if (stList.size()>1) isBad = true;
-                }
+                set.stream().forEach(word ->{
+                    Object[] list = set.stream().filter((el) -> el.contains(word)).toArray();
+
+                    if (list.length > 1) isBad.set(true);
+                });
+
                 set.clear();
-                if (isBad) {
+                if (isBad.get()) {
                     System.out.println("Conjunto Ruim");
                 } else {
                     System.out.println("Conjunto Bom");
