@@ -17,28 +17,31 @@ public class ConjuntosBonsOuRuins {
         while (sc.hasNextLine()) {
             int numberOfLines = Integer.parseInt(sc.nextLine().trim());
 
-            if (numberOfLines != 0) {
-                for (int i = 0; i < numberOfLines; i++) {
-                    String currentToken = sc.nextLine().trim();
-                    set.add(currentToken);
-                }
-                AtomicBoolean isBad = new AtomicBoolean(false);
-
-                set.stream().forEach(word ->{
-                    Object[] list = set.stream().filter((el) -> el.contains(word)).toArray();
-
-                    if (list.length > 1) isBad.set(true);
-                });
-
-                set.clear();
-                if (isBad.get()) {
-                    System.out.println("Conjunto Ruim");
-                } else {
-                    System.out.println("Conjunto Bom");
-                }
-            }else{
+            if (numberOfLines == 0){
                 break;
             }
+            for (int i = 0; i < numberOfLines; i++) {
+                String currentToken = sc.nextLine().trim();
+                set.add(currentToken);
+            }
+            AtomicBoolean isBad = new AtomicBoolean(false);
+
+            set.stream().forEach(word ->{
+                Object[] list = set.stream().filter((el) -> {
+                    if(word.length()>el.length()) return false;
+                    return el.substring(0,word.length()).equals(word);
+                }).toArray();
+
+                if (list.length > 1) isBad.set(true);
+            });
+
+            set.clear();
+            if (isBad.get()) {
+                System.out.println("Conjunto Ruim");
+            } else {
+                System.out.println("Conjunto Bom");
+            }
+
         }
     }
 }

@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 // not accepted - case teste 4, 5 and 6 with error
-
+// accepted on uri online judge
 public class EntrevistaEmbaraçosa {
 
     public static void main(String[] args) {

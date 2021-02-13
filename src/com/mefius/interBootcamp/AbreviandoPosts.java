@@ -48,7 +48,6 @@ public class AbreviandoPosts {
             }
 
             // printing word with words mapped
-
             for (String word : words) {
                 if(abreviations.containsValue(word)){
                     System.out.print(word.substring(0,1)+". ");
