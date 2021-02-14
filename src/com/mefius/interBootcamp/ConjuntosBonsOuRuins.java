@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-// not accepted - case teste 4 with error
+// accepted
 public class ConjuntosBonsOuRuins {
 
     public static void main (String[] args) throws IOException {
