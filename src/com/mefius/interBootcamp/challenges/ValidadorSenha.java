@@ -1,4 +1,4 @@
-package com.mefius.interBootcamp;
+package com.mefius.interBootcamp.challenges;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
